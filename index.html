@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html id="html">
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <div id="loading">
+	  <p>Loading.. Please wait</p>
+	  <div id="progress-bar">
+	    <span id="percentage"></span>
+	  </div>
+	</div>
+	
+    <div id="controls">
+	  <button title="F2" id="new_button">new game</button>
+	  <button title="" id="replay_button">replay</button>
+	  <button title="" id="cpu_button">CPU play</button>
+	  <button title="CTRL+Z" id="undo_button" disabled="true">undo</button>
+	  <button title="CTRL+Y" id="redo_button" disabled="true">redo</button>
+	  <button title="turn on or off the sounds" id="sound_button">sounds on</button>
+	  <button title="H" id="hint_button">hint</button>
+	  <button title="save  the current game" id="save_button">save</button>
+	  <button title="" id="statistics_button">statistics</button>
+	  <button title="Change the game settings" id="settings_button">settings</button>
+	  <button title="How to play" id="help_button">Help</button>
+      <button title="" id="about_button">about</button>
+	</div>
+	
+	<div id="settings_menu">
+	  <span id="close_button" style="cursor:pointer;font-size: 20px;position: absolute; right:0; top:0">&times;</span>
+	  <table>
+	    <tr>
+		  <td>Draw: </td>
+		  <td>
+		    <select onchange="settings_values.value += 'userSettings.drawCount = ' + this.options[this.selectedIndex].value + ';' ">
+			  <option value="3">3 cards</option>
+			  <option value="1">1 card</option>
+			</select>
+		  </td>
+		</tr>
+		
+		<tr>
+		<td>CPU speed: </td>
+		  <td><!-- hack -->
+		    <select onchange="settings_values.value += 'userSettings.cpuSpeed = ' + this.options[this.options.selectedIndex].value + ';' ">
+			  <option value="500">slow</option>
+			  <option value="250">normal</option>
+			  <option value="80">fast</option>
+			</select>
+		  </td>
+		</tr>
+	  </table>
+	  <button style="margin:0;" id="apply_button">OK</button>
+	 <br>changes are applied in the next game
+	  <input type="hidden" id="settings_values">
+	</div>
+	
+	<div parent="0" id="stack" class="card_holder"></div>
+	<div parent="1" id="three_cards" class="card_holder"></div>
+	
+	<div parent="2" type="holder" class="card_holder" id="ace_one" ></div>
+	<div parent="3" type="holder" class="card_holder" id="ace_two" ></div>
+	<div parent="4" type="holder" class="card_holder" id="ace_three"></div>
+	<div parent="5" type="holder" class="card_holder" id="ace_four" ></div>
+	    
+	<div parent="6" type="holder"  class="card_holder" id="pile_one" ></div>
+	<div parent="7" type="holder"  class="card_holder" id="pile_two"></div>
+	<div parent="8" type="holder"  class="card_holder" id="pile_three"></div>
+	<div parent="9" type="holder"  class="card_holder" id="pile_four"></div>
+	<div parent="10" type="holder" class="card_holder" id="pile_five"></div>
+	<div parent="11" type="holder" class="card_holder" id="pile_six"></div>
+	<div parent="12" type="holder" class="card_holder" id="pile_seven"></div>
+	
+	<script type="text/javascript" src="js/constants.js"></script>
+	<script type="text/javascript" src="js/prototype.js"></script>
+	<script type="text/javascript" src="js/loading.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+	<script type="text/javascript" src="js/global.js"></script>
+	<script type="text/javascript" src="js/events.js"></script>
+	<script type="text/javascript" src="js/game.js"></script>
+	<script type="text/javascript" src="js/gui.js"></script>
+	<script type="text/javascript" src="js/debug.js"></script>
+	<script type="text/javascript" src="js/cpu.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/testing.js"></script>
+  </body>
+</html>
